@@ -6,7 +6,7 @@ expressSanitizer    = require("express-sanitizer"),
             app     = express();
 
 //APP CONFIG
-mongoose.connect("mongodb://localhost/restful_blog_app", {useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
